@@ -14,7 +14,7 @@ if nargin == 1, seqstru = seq;
 end
 if nargin == 2, seqstru = characterseq(seq, stru);
 end
-%8个字符的序列 A UGC ,B V H D
+%8涓瓧绗︾殑搴忓垪 A UGC ,B V H D
 len = length(seq);
 
 x = 0:1:3 * len;
@@ -58,7 +58,7 @@ plot(x, numseq);
 % stru = '..(((((...((....))...))))).....';
 
 function seqstru = characterseq(seq, stru)
-%%%%%% 将二级结构序列转化为 8个字符的序列 A UGC ,B V H D
+%%%%%% 灏嗕簩绾х粨鏋勫簭鍒楄浆鍖栦负 8涓瓧绗︾殑搴忓垪 A UGC ,B V H D
 
 len = length(seq);
 length(stru);

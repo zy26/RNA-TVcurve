@@ -13,7 +13,7 @@ globalpath = global_path; % Maybe we can change global_path to matlab cd
 
 [header2, numseq_2] = loadPairFile('2', input_path, seq_file_2, stru_file_2, output_path);
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% RNA-TV的相似性度�?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% RNA-TV的相似性度量
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -26,18 +26,18 @@ if (N ~= length(header2))
     throw(ME);
 end
 
-Sim_wavelet = zeros(N, 1); %%%�?波的多分辨率相似性：
+Sim_wavelet = zeros(N, 1); %%%小波的多分辨率相似性：
 
 if iscell(header1)
     for i = 1:N
         %%%%%%%%%%%%%%%%%%
-        %%%�?波的多分辨率相似性：
+        %%%小波的多分辨率相似性：
         Sim_wavelet(i) = waveletSimilarity(numseq_1{i}, numseq_2{i});
         savedouble(fullfile(output_path, sprintf('%03d', i), 'distance_wavelet.txt'), header1{i}, header2{i}, 1 - Sim_wavelet(i));
     end
 else
     %%%%%%%%%%%%%%%%%%
-    %%%�?波的多分辨率相似性：
+    %%%小波的多分辨率相似性：
     Sim_wavelet = waveletSimilarity(numseq_1, numseq_2);
     savedouble(fullfile(output_path, 'distance_wavelet.txt'), header1, header2, 1 - Sim_wavelet);
 end

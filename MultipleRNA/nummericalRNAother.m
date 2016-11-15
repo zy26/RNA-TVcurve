@@ -12,11 +12,11 @@
 function numseq=nummericalRNAother(seq,stru)
 if nargin ==1, seqstru=seq; end
 if nargin ==2, seqstru=characterseq(seq,stru);end
-%8个字符的序列 A UGC ,B V H D
+%8涓瓧绗︾殑搴忓垪 A UGC ,B V H D
 len=length(seq);
 
 numseq=zeros(1,3*len);
-%%%配对的碱基对称的表示 0.7205
+%%%閰嶅鐨勭⒈鍩哄绉扮殑琛ㄧず 0.7205
 for i=1:len
     %%%% 3*i-2
     if i==1
@@ -56,7 +56,7 @@ end
 %
 %
 function seqstru=characterseq(seq,stru)
-%%%%%% 将二级结构序列转化为 8个字符的序列 A UGC ,B V H D
+%%%%%% 灏嗕簩绾х粨鏋勫簭鍒楄浆鍖栦负 8涓瓧绗︾殑搴忓垪 A UGC ,B V H D
 
 len=length(seq);
 length(stru);

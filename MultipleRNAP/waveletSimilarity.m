@@ -1,7 +1,7 @@
 function  s=waveletSimilarity(x,y,~,~)
-% %% x,y Ô­Ê¼ĞÅºÅ
-% %%wname: Ñ¡ÔñµÄĞ¡²¨  %%Ä¬ÈÏÊÇdb2 ¾²Ì¬Ğ¡²¨±ä»»
-% %%level£ºĞ¡²¨±ä»»µÄ²ãÊı: Ä¬ÈÏÊÇMaximum wavelet decomposition level
+% %% x,y åŸå§‹ä¿¡å·
+% %%wname: é€‰æ‹©çš„å°æ³¢  %%é»˜è®¤æ˜¯db2 é™æ€å°æ³¢å˜æ¢
+% %%levelï¼šå°æ³¢å˜æ¢çš„å±‚æ•°: é»˜è®¤æ˜¯Maximum wavelet decomposition level
 %
 %
 %

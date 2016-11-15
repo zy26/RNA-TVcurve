@@ -43,16 +43,16 @@ fout2 = fopen(RNApdistPair, 'w');
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%¼ÆËãÏàËÆĞÔ
+%%%è®¡ç®—ç›¸ä¼¼æ€§
 
-Sim_wavelet = zeros(N, N); %%%Ğ¡²¨µÄ¶à·Ö±æÂÊÏàËÆĞÔ£º
+Sim_wavelet = zeros(N, N); %%%å°æ³¢çš„å¤šåˆ†è¾¨ç‡ç›¸ä¼¼æ€§ï¼š
 
 for i = 1:N
     Sim_wavelet(i, i) = 1;
     numseq{i} = nummericalRNAother(seq{i}, stru{i});
     for j = i + 1:N
-        %%%±£´æ³É RNAdistance¿ÉÒÔÅú´¦ÀíµÄĞÎÊ½ aaa-RNApdistPair.txt
-        %%%±£´æ³É RNAdistance¿ÉÒÔÅú´¦ÀíµÄĞÎÊ½ aaa-RNAdistancePair.txt
+        %%%ä¿å­˜æˆ RNAdistanceå¯ä»¥æ‰¹å¤„ç†çš„å½¢å¼ aaa-RNApdistPair.txt
+        %%%ä¿å­˜æˆ RNAdistanceå¯ä»¥æ‰¹å¤„ç†çš„å½¢å¼ aaa-RNAdistancePair.txt
      
         fprintf(fout1, '%s\n', stru{i});
         fprintf(fout1, '%s\n', stru{j});
@@ -60,7 +60,7 @@ for i = 1:N
         fprintf(fout2, '%s\n', seq{j});
      
         %%%%%%%%%%%%%%%%%%
-        %%%Ğ¡²¨µÄ¶à·Ö±æÂÊÏàËÆĞÔ£º
+        %%%å°æ³¢çš„å¤šåˆ†è¾¨ç‡ç›¸ä¼¼æ€§ï¼š
         Sim_wavelet(i, j) = waveletSimilarity(numseq{i}, numseq{j});
         Sim_wavelet(j, i) = Sim_wavelet(i, j);
     end
@@ -73,7 +73,7 @@ RNAdistanceResult = 'aaa-RNAdistanceResult.txt';
 delete(RNAdistanceResult);
 RunCmd('RNAdistance', RNAdistancePair, RNAdistanceResult);
 
-%%%%%%%%%%%¶ÁÈ¡ÀûÓÃRNAdistanceµÃµ½µÄ¾àÀëÎÄ¼ş
+%%%%%%%%%%%è¯»å–åˆ©ç”¨RNAdistanceå¾—åˆ°çš„è·ç¦»æ–‡ä»¶
 
 fid = fopen(RNAdistanceResult, 'r');
 P = fscanf(fid, ['%s %f']);
@@ -88,7 +88,7 @@ delete(RNApdistResult);
 RunCmd('RNApdist', RNApdistPair, RNApdistResult);
 
 %
-%      %%%%%%%%%%%¶ÁÈ¡ÀûÓÃRNAdistanceµÃµ½µÄ¾àÀëÎÄ¼ş
+%      %%%%%%%%%%%è¯»å–åˆ©ç”¨RNAdistanceå¾—åˆ°çš„è·ç¦»æ–‡ä»¶
 %
 fid = fopen(RNApdistResult, 'r');
 P = fscanf(fid, ['%f']);
